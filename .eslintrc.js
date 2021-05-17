@@ -11,10 +11,12 @@ module.exports = {
     plugins: [
     ],
     // add your custom rules here
-    rules: {
-        indent: ['error', 4],
+    rules: { // by default eslint rules are dog shit
+        indent: ['warn', 4],
         'vue/html-indent': ['warn', 4],
-        'no-lone-blocks': ['off']
+        'no-lone-blocks': ['off'],
+        'require-await': ['off'],
+        'import/no-mutable-exports': ['off']
     }
 
 }
