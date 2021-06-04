@@ -16,7 +16,8 @@ module.exports = {
         'vue/html-indent': ['warn', 4],
         'no-lone-blocks': ['off'],
         'require-await': ['off'],
-        'import/no-mutable-exports': ['off']
+        'import/no-mutable-exports': ['off'],
+        curly: ['off']
     }
 
 }

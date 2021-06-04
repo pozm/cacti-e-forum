@@ -13,9 +13,9 @@
                             <svg data-src="https://s2.svgbox.net/hero-outline.svg?ic=home" width="24" height="24" color="#ffffff" />
                             Home
                         </vs-button>
-                        <vs-button transparent to="/users">
-                            <svg data-src="https://s2.svgbox.net/hero-outline.svg?ic=users" width="24" height="24" color="#ffffff" />
-                            Users
+                        <vs-button transparent to="/forum">
+                            <svg data-src="https://s2.svgbox.net/materialui.svg?ic=push_pin" width="24" height="24" color="#ffffff" />
+                            Forum
                         </vs-button>
                     </div>
                     <div v-if="userStore.LoggedIn" class="ava">

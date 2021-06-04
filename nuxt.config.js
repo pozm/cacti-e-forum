@@ -1,7 +1,7 @@
 export default {
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        title: 'cacti-forum',
+        title: 'cacti',
         htmlAttrs: {
             lang: 'en'
         },
@@ -12,13 +12,17 @@ export default {
         ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+        ],
+        script: [
+            { async: true, type: 'text/javascript', src: 'https://unpkg.com/external-svg-loader@latest/svg-loader.min.js' }
         ]
     },
 
     // Global CSS: https://go.nuxtjs.dev/config-css
     css: [
         // 'vuesax/dist/vuesax.css',
-        '@/assets/main.scss'
+        '@/assets/main.scss',
+        '@/assets/bootstrap.css'
     ],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -33,15 +37,18 @@ export default {
     // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
     buildModules: [
     // https://go.nuxtjs.dev/typescript
-        '@nuxt/typescript-build'
+        '@nuxt/typescript-build',
+        '@nuxtjs/svg',
+        'nuxt-purgecss'
         // https://go.nuxtjs.dev/stylelint
     ],
 
     // Modules: https://go.nuxtjs.dev/config-modules
     modules: [
     // https://go.nuxtjs.dev/axios
-        '@nuxtjs/axios',
-        'nuxt-mq'
+        '@nuxtjs/axios', // making requests.
+        'nuxt-mq', // detecting what resolution > that being, tablet, desktop, mobile, etc.
+        'portal-vue/nuxt' // useful for teleporting elements to other places in the dom. -> for example. with modals.
     ],
 
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
