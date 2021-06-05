@@ -48,7 +48,7 @@ export default Vue.extend({
     .drop-shadow{
         border-radius: 50%;
         box-shadow: 3px 10px 20px -10px rgba($--color-primary, 1);
-        margin-right: 10px;
+        //margin-right: 10px;
 
     }
     .p1 {

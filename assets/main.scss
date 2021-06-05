@@ -8,6 +8,10 @@ body {
     background-color: $--color-white;
     color:white;
 }
+::selection {
+    background-color: mix($--color-primary,$--background-color,15);
+}
+
 html {
     overflow-x: hidden;
 }

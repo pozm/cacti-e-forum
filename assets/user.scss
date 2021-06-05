@@ -46,6 +46,9 @@
     display: flex;
     flex-flow: wrap;
     align-items: center;
+    &  img {
+        display: flex;
+    }
 }
 .AvatarText {
     font-size: large;

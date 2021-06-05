@@ -9,8 +9,8 @@
                 </div>
                 <div id="naver">
                     <vs-button transparent to="/forum">
-                        <svg data-src="https://s2.svgbox.net/materialui.svg?ic=push_pin" width="24" height="24" color="#ffffff" />
-                        Forum
+                        <svg data-src="https://s2.svgbox.net/hero-solid.svg?ic=folder" width="24" height="24" color="#ffffff" />
+                        home
                     </vs-button>
                 </div>
             </div>
@@ -55,6 +55,7 @@ export default Vue.extend({
         border-radius: 8px;
         position: sticky;
         top:5px;
+        z-index: 4324234;
         box-shadow: 0px 3px 6px 12px $--background-color;
 
         //backdrop-filter: blur(40px);
@@ -65,6 +66,9 @@ export default Vue.extend({
             border-radius: 8px;
             * {
                 padding: 0px .5rem;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
             }
         }
         &:hover {
@@ -73,6 +77,7 @@ export default Vue.extend({
                 transform: translateY(-6px);
                 opacity: 1;
             }
+
         }
         & > #naver {
             transition: opacity .5s,transform .5s;
@@ -83,7 +88,7 @@ export default Vue.extend({
             width: calc(100% - .5rem);
             box-shadow: 0px 10px 4px rgba($--background-color,238);
             padding-left: .5rem;
-            backdrop-filter: blur(40px);
+            //backdrop-filter: blur(40px);
 
             border-radius: 0 0 8px 8px;
         }
@@ -94,6 +99,12 @@ export default Vue.extend({
         background: $--background-color-sec;
         border-radius: 8px;
         min-height: 100vh;
+        & > #content {
+            margin: 3em 2em 2em;
+            border-radius: 8px;
+            min-height: inherit;
+            padding:2em
+        }
     }
 }
 
