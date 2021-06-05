@@ -1,7 +1,14 @@
 <template>
-    <div class="container">
-        <div>
+    <div id="lol" >
+        <div id="girl">
+        </div>
+        <div id="her">
 
+            <div >
+                <h1>
+                    Welcome to cacti!
+                </h1>
+            </div>
         </div>
     </div>
 </template>
@@ -12,7 +19,39 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import 'assets/Variables';
+#her{
+    position: absolute;
+    top: 40%;
+    left: 60vw;
+    border: solid 2px transparent;
+    width: 23rem;
+    max-height: 10em;
+    min-height: 10rem;
+    transform: translateX(-20%);
+    background-color: rgba($--background-color-sec,.5);
+    background-clip: padding-box;
+    backdrop-filter: blur(40px);
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#lol {
+    display: flex;
+    flex-flow: row;
+}
+#girl {
+    height: calc(100vh - 16px);
+    background-image: url("~/assets/A_cactigirl.png");
+    background-repeat: no-repeat;
+    background-clip: content-box;
+    background-position: center;
+    width: 60vw;
+}
+
 .container {
     margin: 0 auto;
     min-height: 100vh;

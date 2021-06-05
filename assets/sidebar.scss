@@ -14,7 +14,7 @@
     & > .inner {
         transition: transform .7s;
         transform: translate( -160px,5vh );
-        background: $--background-color-sec;
+        background: rgba($--background-color-sec,.8);
         width:100px;
         height: 90vh;
         margin-left:40px;
@@ -31,6 +31,15 @@
         padding-bottom: 15px;
 
         box-shadow: 3px 8px 17px 1px #08090a;
+
+
+        backdrop-filter: blur(40px);
+        border: solid 3px transparent;
+
+        position: relative;
+        top: -2.5vh;
+        // for SOME FUCKING REASON IT OFFSETS OFR NO REASON I SPENT FUCKING HOURS DEBUGGING WHY THIS SHIT DIDN;T FUCKING WORK I ACTUALLY FUCKING HATE CSS AND THE AMOUNT OF FUCKING TIME IT MADE ME WASTE OH MY FUCKING GOD WHH DO YOU HAVE TO BE SO FUCKING UNPREDICTABLE IT;S ACTUALLY ANNOYING
+
 
         & > button {
             margin-left: 10px;

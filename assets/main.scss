@@ -44,8 +44,8 @@ a {
     }
     & > #content {
         transition: margin-left .6s;
-        margin-left: 170px;
-        width: calc(100vw - 160px);
+        //margin-left: 170px;
+        width: 100vw
     }
 }
 @media only screen and (max-width: 760px) {
