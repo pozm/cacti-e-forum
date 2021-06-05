@@ -22,7 +22,8 @@ export default {
     css: [
         // 'vuesax/dist/vuesax.css',
         '@/assets/main.scss',
-        '@/assets/bootstrap.css'
+        '@/assets/bootstrap.css',
+        '@/node_modules/vuesax/dist/vuesax.css'
     ],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -38,18 +39,14 @@ export default {
     buildModules: [
     // https://go.nuxtjs.dev/typescript
         '@nuxt/typescript-build',
-        '@nuxtjs/svg',
-        'nuxt-purgecss'
+        '@nuxtjs/svg'
+        // ['nuxt-purgecss',
+        //     {
+        //         whitelist: '@/node_modules/vuesax/dist/'
+        //     }
+        // ] can't get it not to break shit
         // https://go.nuxtjs.dev/stylelint
     ],
-    purgeCSS: {
-        // your settings here
-        paths: [
-            'components/**/*.vue',
-            'layouts/**/*.vue',
-            'pages/**/*.vue'
-        ]
-    },
 
     // Modules: https://go.nuxtjs.dev/config-modules
     modules: [
