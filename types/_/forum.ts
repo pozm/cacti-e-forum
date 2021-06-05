@@ -10,6 +10,7 @@ export namespace forumData {
         Dislikes:number;
         QuoteId:number | undefined; // reply id which the user is quoting
         Content:string;
+        TimeMade:Date
     }
     export interface Thread {
         ThreadName: string;

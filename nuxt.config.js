@@ -42,6 +42,14 @@ export default {
         'nuxt-purgecss'
         // https://go.nuxtjs.dev/stylelint
     ],
+    purgeCSS: {
+        // your settings here
+        paths: [
+            'components/**/*.vue',
+            'layouts/**/*.vue',
+            'pages/**/*.vue'
+        ]
+    },
 
     // Modules: https://go.nuxtjs.dev/config-modules
     modules: [
