@@ -2,17 +2,19 @@
     <div id="main">
         <div id="outer">
             <div id="topbar">
-                <vs-button transparent to="/forum">
-                    <svg data-src="https://s2.svgbox.net/materialui.svg?ic=push_pin" width="24" height="24" color="#ffffff" />
-                    Forum
-                </vs-button>
-            </div>
-            <div id="inner">
                 <div id="Thread-name">
                     <h1>
                         {{ ThreadNamer }}
                     </h1>
                 </div>
+                <div id="naver">
+                    <vs-button transparent to="/forum">
+                        <svg data-src="https://s2.svgbox.net/materialui.svg?ic=push_pin" width="24" height="24" color="#ffffff" />
+                        Forum
+                    </vs-button>
+                </div>
+            </div>
+            <div id="inner">
                 <div id="content">
                     <nuxt />
                 </div>
@@ -49,24 +51,49 @@ export default Vue.extend({
     //background: $--background-color-sec;
     //border-radius: 8px;
     #topbar {
-        background: $--background-color-sec;
+        background: rgba($--background-color-sec,1);
         border-radius: 8px;
         position: sticky;
         top:5px;
-        box-shadow: 0px 10px 4px rgba($--background-color,238)
-    }
-    #inner {
-        margin-top: 1rem;
-        background: $--background-color-sec;
-        border-radius: 8px;
-        #Thread-name {
-            margin: 2rem 1rem 1rem 1rem;
+        box-shadow: 0px 3px 6px 12px $--background-color;
+
+        //backdrop-filter: blur(40px);
+        //border: solid 3px transparent;
+
+        & > #Thread-name {
+            margin: 1rem .5rem .5rem .5rem;
             border-radius: 8px;
-            background: scale-color($--background-color-sec,$lightness:-10%);
             * {
                 padding: 0px .5rem;
             }
         }
+        &:hover {
+            #naver {
+                transition: opacity .5s,transform .5s;
+                transform: translateY(-6px);
+                opacity: 1;
+            }
+        }
+        & > #naver {
+            transition: opacity .5s,transform .5s;
+            opacity: 0;
+            position: absolute;
+            transform: translateY(-44px);
+            background: linear-gradient(0deg, mix($--color-primary,$--background-color-sec,2) 0%, $--background-color-sec 100%);
+            width: calc(100% - .5rem);
+            box-shadow: 0px 10px 4px rgba($--background-color,238);
+            padding-left: .5rem;
+            backdrop-filter: blur(40px);
+
+            border-radius: 0 0 8px 8px;
+        }
+    }
+
+    #inner {
+        margin-top: 1rem;
+        background: $--background-color-sec;
+        border-radius: 8px;
+        min-height: 100vh;
     }
 }
 

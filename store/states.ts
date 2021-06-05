@@ -14,5 +14,5 @@ Vue.use(vuex)
     namespaced: true
 })
 export default class StateModule extends VuexModule implements StateData.State {
-    ThreadName :string = 'lol';
+    ThreadName :string = 'Why cacti should beat v3rm';
 }
