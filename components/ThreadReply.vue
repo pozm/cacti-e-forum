@@ -1,9 +1,9 @@
 <template>
     <div class="ThreadReply">
-        <div v-if="reply.Author.RankId ===1" class="ThreadUpper" >
-            <div >
-                <vs-button transparent circle icon >
-                    <svg data-src="https://s2.svgbox.net/hero-solid.svg?ic=dots-vertical" width="24" height="24" color="#ffffff"/>
+        <div v-if="reply.Author.RankId ===1" class="ThreadUpper">
+            <div>
+                <vs-button transparent circle icon>
+                    <svg data-src="https://s2.svgbox.net/hero-solid.svg?ic=dots-vertical" width="24" height="24" color="#ffffff" />
                 </vs-button>
             </div>
         </div>
@@ -28,6 +28,16 @@
                         Reputation <p style="margin: 0" :class="{rep:true,[reply.Author.Reputation > -1 ? 'good':'bad']:true}">
                             {{ reply.Author.Reputation }}
                         </p>
+                    </div>
+                    <div class="badgeSector">
+                        <div v-for="badge in getBadges" :key="badge+uuidv4">
+                            <vs-tooltip>
+                                <template #tooltip>
+                                    {{ badge2name(badge) }}
+                                </template>
+                                <svg :data-src="badge2ico(badge)" width="32" height="32" color="#ffffff" />
+                            </vs-tooltip>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -62,6 +72,10 @@
 import Vue, { PropType } from 'vue'
 import '@/assets/user.scss'
 import { forumData } from '~/types/_/forum'
+import { Badge } from '~/assets/Badge'
+import { uuidv4 } from '~/assets/Functions'
+import { userData } from '~/types'
+
 export default Vue.extend({
     name: 'ThreadReply',
     props: {
@@ -79,6 +93,26 @@ export default Vue.extend({
                 month: 'short',
                 year: 'numeric'
             })
+        },
+        getBadges () {
+            const b = Badge.has(this.reply.Author.Badge)
+            return b
+        },
+        uuidv4
+    },
+    methods: {
+        badge2ico (bad: userData.Badges) {
+            switch (bad) {
+            case userData.Badges.GAMER: {
+                return 'https://s2.svgbox.net/hero-solid.svg?ic=sun'
+            }
+            case userData.Badges.oka: {
+                return 'https://s2.svgbox.net/hero-solid.svg?ic=sparkles'
+            }
+            }
+        },
+        badge2name (bad:userData.Badges) {
+            return userData.Badges[bad].toString()
         }
     }
 })
@@ -146,6 +180,11 @@ export default Vue.extend({
                         margin-bottom: 0;
                         color:#67717F;
                         display: ruby; // i have no clue what this is; but it works.
+                    }
+                    & > .badgeSector {
+                        display: flex;
+                        flex-flow:wrap;
+                        justify-content: center;
                     }
                 }
             }
