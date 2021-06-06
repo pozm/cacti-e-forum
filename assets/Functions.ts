@@ -9,17 +9,14 @@ export function uuidv4 () {
         return v.toString(16)
     })
 }
-export const collectionOptionsctx = [
+export const ThreadReplyOptionsctx = [
     {
-        name: 'View',
-        slug: 'download',
+        name: 'Edit',
+        slug: 'edit',
         class: 'my-custom-class'
-    },
-    {
-        name: 'Download',
-        slug: 'download'
     }
 ]
+
 export function Clamp (min:number, max:number, v:number) {
     return Math.min(Math.max(v, min), max)
 };

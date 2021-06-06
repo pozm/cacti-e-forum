@@ -2,7 +2,7 @@
     <div class="ThreadReply">
         <div v-if="reply.Author.RankId ===1" class="ThreadUpper">
             <div>
-                <vs-button transparent circle icon>
+                <vs-button transparent circle icon @click.prevent.stop="OnCtxMen($event)" @contextmenu.prevent="OnCtxMen($event)" >
                     <svg data-src="https://s2.svgbox.net/hero-solid.svg?ic=dots-vertical" width="24" height="24" color="#ffffff" />
                 </vs-button>
             </div>
@@ -24,11 +24,11 @@
                     <p class="usa2">
                         Joined {{ timeMadeAuth }}
                     </p>
-                    <div class="usa2">
-                        Reputation <p style="margin: 0" :class="{rep:true,[reply.Author.Reputation > -1 ? 'good':'bad']:true}">
+                    <p class="usa2">
+                        Reputation <span style="margin: 0" :class="{rep:true,[reply.Author.Reputation > -1 ? 'good':'bad']:true}">
                             {{ reply.Author.Reputation }}
-                        </p>
-                    </div>
+                        </span>
+                    </p>
                     <div class="badgeSector">
                         <div v-for="badge in getBadges" :key="badge+uuidv4">
                             <vs-tooltip>
@@ -64,6 +64,12 @@
                 </p>
             </div>
         </div>
+        <vue-simple-context-menu
+            ref="ctxmen"
+            :element-id="reply.ReplyId+uuidv4"
+            :options="getCtxOpts"
+            @option-clicked="ctxClick"
+        />
     </div>
 </template>
 
@@ -73,7 +79,7 @@ import Vue, { PropType } from 'vue'
 import '@/assets/user.scss'
 import { forumData } from '~/types/_/forum'
 import { Badge } from '~/assets/Badge'
-import { uuidv4 } from '~/assets/Functions'
+import { ThreadReplyOptionsctx, uuidv4 } from '~/assets/Functions'
 import { userData } from '~/types'
 
 export default Vue.extend({
@@ -98,13 +104,14 @@ export default Vue.extend({
             const b = Badge.has(this.reply.Author.Badge)
             return b
         },
-        uuidv4
+        uuidv4,
+        getCtxOpts: () => ([...ThreadReplyOptionsctx])
     },
     methods: {
         badge2ico (bad: userData.Badges) {
             switch (bad) {
-            case userData.Badges.GAMER: {
-                return 'https://s2.svgbox.net/hero-solid.svg?ic=sun'
+            case userData.Badges.bang: {
+                return 'https://s2.svgbox.net/hero-outline.svg?ic=currency-bangladeshi'
             }
             case userData.Badges.oka: {
                 return 'https://s2.svgbox.net/hero-solid.svg?ic=sparkles'
@@ -113,7 +120,14 @@ export default Vue.extend({
         },
         badge2name (bad:userData.Badges) {
             return userData.Badges[bad].toString()
-        }
+        },
+        ctxClick: () => {
+            // do stuff
+        },
+        OnCtxMen(_: any, item: any) {
+            (this.$refs.ctxmen as any).showMenu(event, item);
+        },
+
     }
 })
 
@@ -178,7 +192,7 @@ export default Vue.extend({
                     & > .usa2 {
                         margin-top: 0;
                         margin-bottom: 0;
-                        color:#67717F;
+                        //color:#67717F;
                         display: ruby; // i have no clue what this is; but it works.
                     }
                     & > .badgeSector {

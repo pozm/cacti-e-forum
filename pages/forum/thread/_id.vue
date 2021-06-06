@@ -28,7 +28,7 @@ export default Vue.extend({
             Username: 'Pozm',
             Reputation: 525,
             Rank,
-            Badge: 0b00000 | userData.Badges.GAMER
+            Badge: 0b00000 | userData.Badges.bang
         }
         const testt: forumData.Thread = {
             ThreadId: 1,

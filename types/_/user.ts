@@ -17,7 +17,7 @@ export namespace userData {
         Badge:number; // bitfield
     }
     export enum Badges {
-        GAMER=0x01,
+        bang=0x01,
         oka=0x02
     }
 }
