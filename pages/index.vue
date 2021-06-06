@@ -8,18 +8,19 @@
                 <h1>
                     Welcome to cacti!
                 </h1>
-                <h3>
+                <!-- <h3>
                     Heres a cute cacti girl
-                </h3>
+                </h3> -->
             </div>
         </div>
     </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+export default Vue.extend({
 
-}
+})
 </script>
 
 <style lang="scss">
@@ -50,7 +51,7 @@ export default {
 }
 #girl {
     height: calc(100vh - 16px);
-    background-image: url("~/assets/A_cactigirl.png");
+    // background-image: url("~/assets/A_cactigirl.png");
     background-repeat: no-repeat;
     background-clip: content-box;
     background-position: center;
