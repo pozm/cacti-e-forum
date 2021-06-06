@@ -98,6 +98,9 @@ export default Vue.extend({
             display: flex;
             flex-flow: row-reverse;
             align-items: center;
+            & svg {
+                margin: 0;
+            }
 
         }
         & > .ReplyFooter {
