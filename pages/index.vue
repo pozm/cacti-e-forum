@@ -8,6 +8,9 @@
                 <h1>
                     Welcome to cacti!
                 </h1>
+                <h3>
+                    Heres a cute cacti girl
+                </h3>
             </div>
         </div>
     </div>
@@ -22,14 +25,12 @@ export default {
 <style lang="scss">
 @import 'assets/Variables';
 #her{
-    position: absolute;
-    top: 40%;
-    left: 60vw;
+    position: relative;
     border: solid 2px transparent;
     width: 23rem;
     max-height: 10em;
     min-height: 10rem;
-    transform: translateX(-20%);
+    transform: translateX(-30%);
     background-color: rgba($--background-color-sec,.5);
     background-clip: padding-box;
     backdrop-filter: blur(40px);
@@ -38,6 +39,10 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    align-self: center;
+    & h1,h2,h3,h4,h5 {
+        text-align: center;
+    }
 }
 #lol {
     display: flex;

@@ -13,6 +13,11 @@ export default Vue.extend({
     layout: 'forum',
     data: () => {
         // test data
+        const Rank:userData.Rank = {
+            RankId: 1,
+            RankName: 'sex',
+            RankPermissions: 0xFFFF
+        }
         const Author: userData.User = {
             Avatar: 'https://cdn.discordapp.com/avatars/288062966803333120/c2ab313b26e940ac262a61ae961ae704.webp?size=2048',
             RankId: 1,
@@ -20,7 +25,9 @@ export default Vue.extend({
             Ips: [],
             CreatedAt: new Date(),
             LastLogin: new Date(),
-            Username: 'Pozm'
+            Username: 'Pozm',
+            Reputation: 525,
+            Rank
         }
         const testt: forumData.Thread = {
             ThreadId: 1,

@@ -99,6 +99,7 @@ export default Vue.extend({
         background: $--background-color-sec;
         border-radius: 8px;
         min-height: 100vh;
+        z-index: 10;
         & > #content {
             margin: 3em 2em 2em;
             border-radius: 8px;

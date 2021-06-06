@@ -1,0 +1,13 @@
+@import "Var";
+
+@function RankC($Rank) {
+    @if $Rank == sex {
+        @return $--color-primary
+    }
+}
+
+.Rank {
+    &.r1{
+        color: RankC(sex) !important;
+    }
+}
