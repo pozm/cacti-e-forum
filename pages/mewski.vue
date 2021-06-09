@@ -18,30 +18,32 @@
 
 <script lang="ts">
 import Vue from 'vue'
-// @ts-ignore
-import vansmug from '@/assets/image/vansmug2.png'
+
 export default Vue.extend({
-    head: () => ({
-        title: 'Mewski likes lolis',
-        meta: [
-            {
-                content: vansmug,
-                name: 'og:image'
-            },
-            {
-                content: 'Cacti',
-                name: 'og:site_name'
-            },
-            {
-                content: 'Mewski likes loli',
-                name: 'og:title'
-            },
-            {
-                content: 'she also likes nekos',
-                name: 'og:description'
-            }
-        ]
-    })
+    head() {
+        return {
+            title: 'Mewski likes lolis',
+            meta: [
+                {
+                    content: 'https://cdn.discordapp.com/attachments/519306219291279362/852233053752524840/vansmug2.png', // yea fuck u, im too lazy i've spent wayyy 2 long tryna fix
+                    name: 'og:image'
+                },
+                {
+                    content: 'Cacti',
+                    name: 'og:site_name'
+                },
+                {
+                    content: 'Mewski likes loli',
+                    name: 'og:title'
+                },
+                {
+                    content: 'she also likes nekos',
+                    name: 'og:description'
+                }
+            ]
+        }
+    }
+
 })
 </script>
 
