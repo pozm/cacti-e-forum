@@ -18,8 +18,30 @@
 
 <script lang="ts">
 import Vue from 'vue'
+// @ts-ignore
+import vansmug from '@/assets/image/vansmug2.png'
 export default Vue.extend({
-
+    head: () => ({
+        title: 'Mewski likes lolis',
+        meta: [
+            {
+                content: vansmug,
+                name: 'og:image'
+            },
+            {
+                content: 'Cacti',
+                name: 'og:site_name'
+            },
+            {
+                content: 'Mewski likes loli',
+                name: 'og:title'
+            },
+            {
+                content: 'she also likes nekos',
+                name: 'og:description'
+            }
+        ]
+    })
 })
 </script>
 
