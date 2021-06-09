@@ -2,7 +2,7 @@
     <div class="__nuxt-error-page">
       <div class="title">An error occured - {{ error.statusCode }} </div>
       <p>Error Message: {{ error.message }}</p>
-      <p v-if="error.statusCode == 404">redirecting to <NuxtLink :to="{ path: '/forum' }" no-prefetch="">/</NuxtLink> in {{ seconds }} seconds</p>
+      <p v-if="error.statusCode == 404">redirecting to <NuxtLink :to="{ path: '/' }" no-prefetch="">/</NuxtLink> in {{ seconds }} seconds</p>
     </div>
 </template>
 
@@ -13,7 +13,7 @@ export default Vue.extend({
     props: ["error"],
     head() {
         return {
-            title: "Forum " + this.error.statusCode
+            title: "Pozm.Pw (Cacti) " + this.error.statusCode
         }
     },
     data() {

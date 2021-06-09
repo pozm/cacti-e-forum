@@ -1,3 +1,5 @@
+const IsDev = process.env.NODE_ENV !== 'production'
+
 export default {
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
@@ -32,6 +34,10 @@ export default {
         '@/plugins/ctxmenu',
         '@/plugins/axios-accessor.ts'
     ],
+    server: {
+        port: IsDev ? 3000 : 80,
+        host: '0.0.0.0',
+    },
 
     // Auto import components: https://go.nuxtjs.dev/config-components
     components: true,

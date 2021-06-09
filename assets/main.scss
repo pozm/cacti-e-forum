@@ -9,7 +9,7 @@ body {
     background-color: $--color-white;
     color:white;
 }
-::selection {
+*::selection {
     background-color: rgba($--color-primary,.3);
 }
 
