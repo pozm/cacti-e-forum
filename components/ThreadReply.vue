@@ -76,7 +76,7 @@
 <script lang="ts">
 
 import Vue, { PropType } from 'vue'
-import '@/assets/user.scss'
+import '~/assets/styling/user.scss'
 import { forumData } from '~/types/_/forum'
 import { Badge } from '~/assets/Badge'
 import { ThreadReplyOptionsctx, uuidv4 } from '~/assets/Functions'
@@ -135,7 +135,7 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 
-    @import "assets/Var";
+    @import "assets/styling/Var";
     .ThreadReply {
         background: scale-color($--background-color,$lightness:1%);
         z-index: 20;

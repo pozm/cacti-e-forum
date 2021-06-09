@@ -17,7 +17,7 @@
 <script lang="ts">
 
 import Vue from 'vue'
-import '@/assets/user.scss'
+import '~/assets/styling/user.scss'
 export default Vue.extend({
     name: 'Avatar',
     props: {
@@ -44,7 +44,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-    @import "assets/Var";
+    @import "assets/styling/Var";
     .drop-shadow{
         border-radius: 50%;
         box-shadow: 3px 10px 20px -10px rgba($--color-primary, 1);

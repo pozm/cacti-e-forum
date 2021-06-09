@@ -42,7 +42,7 @@ export default Vue.extend({
 .mu:not(.el-menu--collapse) {
     width: 200px;
 }
-@import 'assets/Variables';
+@import 'assets/styling/Variables';
 
 #outer {
     margin: 5em 1em 1em;

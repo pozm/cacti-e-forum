@@ -78,7 +78,7 @@ export default Vue.extend({
 
 <style scoped lang="scss" >
 
-@import 'assets/sidebar';
+@import 'assets/styling/sidebar';
 .inner {
     color: white!important;
     //grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));

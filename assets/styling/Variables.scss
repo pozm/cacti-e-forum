@@ -3,7 +3,7 @@
 // only import in here if u need to overwrite. otherwise use nuxt.config.js.
 
 //@import '../node_modules/perfect-scrollbar/css/perfect-scrollbar.css';
-@import '../node_modules/vue-simple-context-menu/dist/vue-simple-context-menu.css';
+@import 'node_modules/vue-simple-context-menu/dist/vue-simple-context-menu.css';
 
 @function toColorList($colour) {
     @return red($colour), green($colour),blue($colour)

@@ -23,8 +23,8 @@ export default {
     // Global CSS: https://go.nuxtjs.dev/config-css
     css: [
         // 'vuesax/dist/vuesax.css',
-        '@/assets/main.scss',
-        '@/assets/bootstrap.css',
+        '@/assets/styling/main.scss',
+        '@/assets/styling/bootstrap.css',
         '@/node_modules/vuesax/dist/vuesax.css'
     ],
 
