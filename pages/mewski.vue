@@ -1,8 +1,8 @@
 <template>
-    <div id="lol" >
-        <div id="girl">
+    <div id="lol1" >
+        <div id="girl1">
         </div>
-        <div id="her">
+        <div id="her1">
 
             <div >
                 <h1>
@@ -25,7 +25,7 @@ export default Vue.extend({
 
 <style lang="scss">
 @import 'assets/Variables';
-#her{
+#her1{
     position: fixed;
     border: solid 2px transparent;
     width: 23rem;
@@ -48,16 +48,17 @@ export default Vue.extend({
         text-align: center;
     }
 }
-#lol {
+#lol1 {
     display: flex;
     flex-flow: row;
 }
-#girl {
+#girl1 {
     height: calc(100vh - 16px);
     background-image: url("~/assets/image/mewskibg.jpg");
-    background-repeat: round;
+    //background-repeat: round;
     background-clip: content-box;
     background-position: center;
+    background-size: cover;
     width: 100%;
     filter:blur(4px);
 }
