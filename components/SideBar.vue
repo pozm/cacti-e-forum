@@ -39,7 +39,7 @@
                         </template>
                     </div>
                     <div v-else class="bottom">
-                        <vs-button transparent to="/account/login">
+                        <vs-button transparent to="/auth/login">
                             <svg data-src="https://s2.svgbox.net/hero-outline.svg?ic=user" width="24" height="24" color="#ffffff" />
                             Login
                         </vs-button>

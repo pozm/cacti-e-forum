@@ -28,7 +28,9 @@ export default Vue.extend({
 
 .model {
     &.bg {
-        //background-image: url("~/assets/image/A_cactigirl.png") !important;
+        background-image: url("~/assets/image/14ba4fd010262c4ae2260478f846c5e0.jpg");
+        filter:blur(4px);
+        height: 100vh;
     }
 }
 

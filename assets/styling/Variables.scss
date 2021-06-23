@@ -15,7 +15,7 @@
     --vs-warn: #{toColorList($--color-warning)};
     --vs-danger: #{toColorList($--color-danger)};
     --vs-dark: #{toColorList($--background-color-base)};
-    --vs-text: #{toColorList($--color-white)};
+    --vs-text: #{toColorList($--color-black)};
     --vs-gray: #{toColorList($--background-color-sec)};
     --vs-gray-2: #{toColorList($--background-color-sec)};
     --vs-gray-3: #{toColorList( scale-color($--background-color-sec,$lightness:-10%))};

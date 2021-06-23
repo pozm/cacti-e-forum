@@ -19,7 +19,7 @@ export default Vue.extend({
             RankPermissions: 0xFFFF
         }
         const Author: userData.User = {
-            Avatar: 'https://cdn.discordapp.com/avatars/288062966803333120/c2ab313b26e940ac262a61ae961ae704.webp?size=2048',
+            Avatar: 'https://cdn.discordapp.com/avatars/644348720263200769/6ec68dcb13b61e9df69e6e3f3fefd102.webp?size=2048',
             RankId: 1,
             Password: '',
             Ips: [],
