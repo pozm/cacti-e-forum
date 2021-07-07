@@ -1,18 +1,10 @@
 <template>
     <div class="model parent" >
-        <div class="model bg"> </div>
-        <div class="model box">
-
-            <div >
-                <h1>
-                    Welcome to cacti
-                </h1>
-                <h3>
-                    aka pozm's website
-                </h3>
-            </div>
+        <div class="model bg">
         </div>
-
+        <div class="model box">
+            you got trolled dumbass
+        </div>
     </div>
 </template>
 
@@ -28,7 +20,7 @@ export default Vue.extend({
 
 .model {
     &.bg {
-        background-image: url("~/assets/image/h-green.jpg");
+        background-image: url("~/assets/image/pnl.png");
         filter:blur(4px) brightness(70%);
         height: 100vh;
     }

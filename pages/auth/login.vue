@@ -12,8 +12,8 @@
                     <vs-input v-model="Password" state="primary" label-placeholder="Password" />
                 </div>
                 <vs-button style="margin-top: 1em" block>
-ok
-</vs-button>
+                    ok
+                </vs-button>
             </div>
         </div>
     </div>
@@ -21,6 +21,7 @@ ok
 
 <script lang="ts">
 import Vue from 'vue'
+
 export default Vue.extend({
     data: () => ({
         Username: '',
@@ -31,6 +32,14 @@ export default Vue.extend({
 
 <style lang="scss">
 @import "assets/styling/modelbg/index";
+
+.model {
+    &.bg {
+        background-image: url("~/assets/image/h-green.jpg");
+        filter:blur(4px) brightness(70%) hue-rotate(180deg);
+        height: 100vh;
+    }
+}
 
 .model .box .lg div:not(:last-child) {
     margin-bottom: 1em;

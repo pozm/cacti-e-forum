@@ -9,6 +9,8 @@ body {
     background-color: $--color-white;
     color:white;
 }
+
+
 *::selection {
     background-color: rgba($--color-primary,.3);
 }
@@ -20,6 +22,14 @@ body {
 html {
     overflow-x: hidden;
 }
+
+// overwrites
+
+.vs-tooltip {
+    background: $--background-color-base !important;
+}
+
+
 a {
   color: var(--color-primary);
 }

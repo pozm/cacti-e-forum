@@ -7,9 +7,9 @@
                 Contact Information
             </h1>
             <br/>
-            <p>
+            <h4>
                 This is where you can find methods of contacting me!
-            </p>
+            </h4>
             <br/>
             <div>
                 <h2>
@@ -43,8 +43,8 @@ export default Vue.extend({
 
 .model {
     &.bg {
-        background-image: url("~/assets/image/14ba4fd010262c4ae2260478f846c5e0.jpg");
-        filter:blur(4px);
+        background-image: url("~/assets/image/h-green.jpg");
+        filter:blur(4px) brightness(70%);
         height: 100vh;
     }
     &.contact {
