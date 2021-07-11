@@ -10,22 +10,22 @@
 }
 
 :root {
-    --vs-primary: #{toColorList($--color-primary)};
-    --vs-success: #{toColorList($--color-success)};
-    --vs-warn: #{toColorList($--color-warning)};
-    --vs-danger: #{toColorList($--color-danger)};
-    --vs-dark: #{toColorList($--background-color-base)};
-    --vs-text: #{toColorList($--color-black)};
-    --vs-gray: #{toColorList($--background-color-sec)};
-    --vs-gray-2: #{toColorList($--background-color-sec)};
-    --vs-gray-3: #{toColorList( scale-color($--background-color-sec,$lightness:-10%))};
-    --vs-gray-4:#{toColorList( scale-color($--background-color-sec,$lightness:15%))};
+    --vs-primary: #{toColorList($color-primary)};
+    --vs-success: #{toColorList($color-success)};
+    --vs-warn: #{toColorList($color-warning)};
+    --vs-danger: #{toColorList($color-danger)};
+    --vs-dark: #{toColorList($background-color-default)};
+    --vs-text: #{toColorList($color-white)};
+    --vs-gray: #{toColorList($background-color-light)};
+    --vs-gray-2: #{toColorList($background-color-light)};
+    --vs-gray-3: #{toColorList( scale-color($background-color-light,$lightness:-10%))};
+    --vs-gray-4:#{toColorList( scale-color($background-color-light,$lightness:15%))};
 }
 
 
-$--rail:scale-color($--background-color,$lightness:-15%);
-$--bar:scale-color($--background-color-sec,$lightness:+15%);
-$--bar2:scale-color($--background-color-sec,$lightness:+17%);
+$--rail:scale-color($background-color-black,$lightness:-15%);
+$--bar:scale-color($background-color-light,$lightness:+15%);
+$--bar2:scale-color($background-color-light,$lightness:+17%);
 .ps .ps__rail-x:hover,
 .ps .ps__rail-y:hover,
 .ps .ps__rail-x:focus,
@@ -63,16 +63,16 @@ $--bar2:scale-color($--background-color-sec,$lightness:+17%);
     border-radius: 8px;
 }
 .vue-simple-context-menu {
-    background-color: $--background-color-sec;
+    background-color: $background-color-light;
     &--active {
     }
 
     &__item {
-      color:$--color-text-regular;
+      color: $color-text-regular;
       &:hover {
-        background-color: $--color-primary;
+        background-color: $color-primary;
         &.-delete {
-          background-color: $--color-danger;
+          background-color: $color-danger;
         }
       }
     }

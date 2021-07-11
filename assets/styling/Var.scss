@@ -1,32 +1,47 @@
-$--color-primary: #5dc243;
-$--color-success: #89d7ac;
-$--color-warning: #f1d593;
-$--color-danger: #ee6d6d;
-$--color-info: #8ccff3;
-$--background-color-base: #000000 !default;
-$--color-white: #0C0E10 !default;
-$--color-black: #eeeeee !default;
-//
-//// text
-//
 
-$--background-color:$--color-white !default;
-$--background-color-sec:scale-color($--background-color,$lightness: +2%) !default;
-$--color-text-primary: #ffffff !default;
-$--color-text-regular: #EBEEF5 !default;
-$--color-text-secondary: #E4E7ED !default;
-$--color-text-placeholder: #DCDFE6 !default;
-$--color-text-sec:#67717F !default;
+// base colours
 
-$--color-text-dark: #212529 !default;
+$color-primary: #72e481;
+$color-success: #72E4A0;
+$color-warning: #F2B990;
+$color-danger: #F36279;
+$color-info: #63C9C3;
 
-//
-//// border
-//
-//
-$--border-color-base: #4a4a4c !default;
-$--border-color-light: #3a3a3d !default;
-$--border-color-lighter: #606266 !default;
-$--border-color-extra-light: #303133 !default;
+$color-purple: #7969A7;
 
-//$--font-path: '~element-ui/lib/theme-chalk/fonts';
+$color-black: #0C0E10 !default;
+$color-white: #E5E2E1 !default;
+
+// backgrounds
+
+$background-color-default: #000000 !default;
+$background-color-black: $color-black !default;
+
+$background-color-light:scale-color($background-color-black,$lightness: +2%) !default;
+$background-color-lightest:#13171b;
+
+$background-color-alt: #414257;
+$background-color-alt-dark: #3B3C4E;
+
+$background-color-white: #E5E2E1;
+$background-color-white-dark: #DAD7D7;
+
+$background-color-reserve: #222222;
+
+//text
+
+$color-text-primary: #F7F7F7 !default;
+$color-text-regular: #EBEEF5 !default;
+$color-text-secondary: #E4E7ED !default;
+$color-text-placeholder: #DCDFE6 !default;
+
+$color-text-dark:#67717F !default;
+$color-text-darkest: #212529 !default;
+
+
+// borders
+
+$border-color-base: #4a4a4c !default;
+$border-color-light: #3a3a3d !default;
+$border-color-lighter: #606266 !default;
+$border-color-extra-light: #303133 !default;

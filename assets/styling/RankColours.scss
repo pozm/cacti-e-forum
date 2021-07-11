@@ -2,7 +2,7 @@
 
 @function RankC($Rank) {
     @if $Rank == sex {
-        @return $--color-primary
+        @return $color-primary
     }
 }
 

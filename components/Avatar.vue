@@ -1,5 +1,12 @@
 <template>
     <div :class="{['drop-shadow']:shadow}">
+        <style>
+
+            :root {
+            --PrimCol : rgb({{ primaryColor }});
+            }
+
+        </style>
         <div :hidden="!loaded" class="CircleMask p1" :style=" outer ? { background: outer} : '' ">
             <div class="CircleMask p2" :style=" inner ? { background: inner} : '' ">
                 <img
@@ -18,6 +25,8 @@
 
 import Vue from 'vue'
 import '~/assets/styling/user.scss'
+const Vibrant = require('node-vibrant')
+
 export default Vue.extend({
     name: 'Avatar',
     props: {
@@ -33,7 +42,13 @@ export default Vue.extend({
             default: true
         }
     },
-    data: () => ({ loaded: false }),
+    mounted() {
+        Vibrant.from(this.url).getPalette((err : any, palette : any) => {
+            this.primaryColor = palette.Vibrant.rgb.join(" ")
+            console.log(err)
+        })
+    },
+    data: () => ({ loaded: false, primaryColor: '0,0,0' }),
     watch: {
         url () {
             this.loaded = false
@@ -43,20 +58,31 @@ export default Vue.extend({
 
 </script>
 
-<style lang="scss" scoped>
+<style>
+
+.drop-shadow {
+    box-shadow: 3px 10px 20px -10px var(--PrimCol) !important;
+}
+.p1 {
+    background: var(--PrimCol) !important;
+}
+
+</style>
+
+<style lang="scss">
     @import "assets/styling/Var";
     .drop-shadow{
         border-radius: 50%;
-        box-shadow: 3px 10px 20px -10px rgba($--color-primary, 1);
+        box-shadow: 3px 10px 20px -10px rgba($color-primary, 1);
         //margin-right: 10px;
 
     }
     .p1 {
         padding:2px;
-        background: $--color-primary;
+        background: $color-primary;
     }
     .p2 {
         padding:3px;
-        background: $--background-color-sec;
+        background: $background-color-light;
     }
 </style>

@@ -1,18 +1,22 @@
 @import 'Variables';
 @import 'RankColours';
+
+// google fonts
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Nunito:wght@300;400&display=swap');
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    font-family: -apple-system, BlinkMacSystemFont, 'Nunito', 'Noto Sans', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     //background-color: var(--bg);
     //color: var(--color);
     transition: background-color 0.3s;
-    background-color: $--color-white;
+    background-color: $color-black;
     color:white;
 }
 
 
 *::selection {
-    background-color: rgba($--color-primary,.3);
+    background-color: rgba($color-primary,.3);
 }
 
 body {
@@ -26,7 +30,8 @@ html {
 // overwrites
 
 .vs-tooltip {
-    background: $--background-color-base !important;
+    background: $background-color-alt !important;
+    box-shadow: 6px 6px 5px 0px rgba($color-black,.7);
 }
 
 
@@ -44,25 +49,25 @@ hr {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    background-color: $--background-color-sec;
+    background-color: $background-color-light;
     border-radius: 4px;
 
 }
 
 .rep{
     &.good {
-        color: $--color-primary;
+        color: $color-primary;
     }
     &.bad {
-        color: $--color-danger;
+        color: $color-danger;
     }
 }
 
 a {
     text-decoration: none;
-    color: $--color-primary;
+    color: $color-primary;
     &:hover {
-        color: scale-color($--color-primary,$lightness:25%);
+        color: scale-color($color-primary,$lightness:25%);
     }
 }
 #main {
@@ -92,7 +97,7 @@ a {
 }
 
 p{
-    color:$--color-text-sec;
+    color: $color-text-dark;
     margin-bottom: 0;
 }
 
@@ -109,9 +114,8 @@ button {
         }
     }
 }
-
 h1,h2,h3,h4,h5 {
-    color:$--color-text-regular
+    color: $color-white
 }
 
 #MAIN_2 {

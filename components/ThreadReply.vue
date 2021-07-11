@@ -1,5 +1,6 @@
 <template>
     <div class="ThreadReply">
+
         <div v-if="reply.Author.RankId ===1" class="ThreadUpper">
             <div>
                 <vs-button transparent circle icon @click.prevent.stop="OnCtxMen($event)" @contextmenu.prevent="OnCtxMen($event)" >
@@ -84,6 +85,7 @@ import { userData } from '~/types'
 
 export default Vue.extend({
     name: 'ThreadReply',
+    data: () => ({ primaryColor: '255, 25, 25' }),
     props: {
         reply: {
             type: Object as PropType<forumData.Reply>,
@@ -137,11 +139,12 @@ export default Vue.extend({
 
     @import "assets/styling/Var";
     .ThreadReply {
-        background: scale-color($--background-color,$lightness:1%);
+        background: scale-color($background-color-lightest);
         z-index: 20;
         min-height: 5em;
         border-radius: 8px;
         padding: 1em 2em;
+        box-shadow: 7px 7px 20px 0px rgba(  scale-color($background-color-lightest,$lightness:-40%),.4);
         & > .ThreadUpper {
             display: flex;
             flex-flow: row-reverse;
@@ -173,7 +176,7 @@ export default Vue.extend({
                 grid-row: 1;
                 grid-column: 1/3;
 
-                border: solid 2px scale-color($--background-color,$lightness:1.7%);
+                border: solid 2px scale-color($background-color-black,$lightness:1.7%);
                 border-radius: 8px;
                 padding:.6em;
                 height: max-content;

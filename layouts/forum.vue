@@ -51,12 +51,12 @@ export default Vue.extend({
     //background: $--background-color-sec;
     //border-radius: 8px;
     #topbar {
-        background: rgba($--background-color-sec,1);
+        background: rgba($background-color-light,1);
         border-radius: 8px;
         position: sticky;
         top:5px;
         z-index: 4324234;
-        box-shadow: 0px 3px 6px 12px $--background-color;
+        box-shadow: 0px 3px 6px 12px $background-color-black;
 
         //backdrop-filter: blur(40px);
         //border: solid 3px transparent;
@@ -84,9 +84,9 @@ export default Vue.extend({
             opacity: 0;
             position: absolute;
             transform: translateY(-44px);
-            background: linear-gradient(0deg, mix($--color-primary,$--background-color-sec,2) 0%, $--background-color-sec 100%);
+            background: linear-gradient(0deg, mix($color-primary, $background-color-light,2) 0%, $background-color-light 100%);
             width: calc(100% - .5rem);
-            box-shadow: 0px 10px 4px rgba($--background-color,238);
+            box-shadow: 0px 10px 4px rgba($background-color-black,238);
             padding-left: .5rem;
             //backdrop-filter: blur(40px);
 
@@ -96,7 +96,7 @@ export default Vue.extend({
 
     #inner {
         margin-top: 1rem;
-        background: $--background-color-sec;
+        background: $background-color-light;
         border-radius: 8px;
         min-height: 100vh;
         z-index: 10;
