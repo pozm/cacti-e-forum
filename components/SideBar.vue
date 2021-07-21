@@ -10,15 +10,18 @@
                 <div class="inner">
                     <div class="top">
                         <vs-button transparent to="/">
-                            <v-icon name="io-home" />
+                            <!-- Please refer: https://github.com/shubhamjain/svg-loader -->
+                            <svg data-src="https://s2.svgbox.net/hero-outline.svg?ic=home" width="32" height="32" color="#000"></svg>
                             Home
                         </vs-button>
                         <vs-button transparent to="/forum">
-                            <v-icon name="bi-pin-angle-fill" />
+                            <!-- Please refer: https://github.com/shubhamjain/svg-loader -->
+                            <svg data-src="https://s2.svgbox.net/octicons.svg?ic=pin-bold" width="32" height="32" color="#000"></svg>
                             Forum
                         </vs-button>
                         <vs-button transparent to="/contact">
-                            <v-icon name="md-email" />
+                            <!-- Please refer: https://github.com/shubhamjain/svg-loader -->
+                            <svg data-src="https://s2.svgbox.net/hero-outline.svg?ic=mail" width="32" height="32" color="#000"></svg>
                             Contact
                         </vs-button>
                     </div>
@@ -44,7 +47,8 @@
                     </div>
                     <div v-else class="bottom">
                         <vs-button transparent to="/auth/login">
-                            <v-icon name="fa-user" />
+                            <!-- Please refer: https://github.com/shubhamjain/svg-loader -->
+                            <svg data-src="https://s2.svgbox.net/hero-outline.svg?ic=user" width="32" height="32" color="#000"></svg>
                             Login
                         </vs-button>
                     </div>

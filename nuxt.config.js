@@ -32,7 +32,7 @@ export default {
     plugins: [
         '@/plugins/vuesax',
         '@/plugins/ctxmenu',
-        '@/plugins/icons',
+        // '@/plugins/icons',
         '@/plugins/axios-accessor.ts'
     ],
     server: {
