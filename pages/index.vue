@@ -8,7 +8,7 @@
                     Welcome to cacti
                 </h1>
                 <h3>
-                    aka pozm's website
+                    aka ∫∫'s website
                 </h3>
             </div>
         </div>
@@ -23,7 +23,7 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "assets/styling/modelbg/index";
 
 .model {

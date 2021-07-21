@@ -10,12 +10,16 @@
                 <div class="inner">
                     <div class="top">
                         <vs-button transparent to="/">
-                            <svg data-src="https://s2.svgbox.net/hero-outline.svg?ic=home" width="24" height="24" color="#ffffff" />
+                            <v-icon name="io-home" />
                             Home
                         </vs-button>
                         <vs-button transparent to="/forum">
-                            <svg data-src="https://s2.svgbox.net/materialui.svg?ic=push_pin" width="24" height="24" color="#ffffff" />
+                            <v-icon name="bi-pin-angle-fill" />
                             Forum
+                        </vs-button>
+                        <vs-button transparent to="/contact">
+                            <v-icon name="md-email" />
+                            Contact
                         </vs-button>
                     </div>
                     <div v-if="userStore.LoggedIn" class="ava">
@@ -40,7 +44,7 @@
                     </div>
                     <div v-else class="bottom">
                         <vs-button transparent to="/auth/login">
-                            <svg data-src="https://s2.svgbox.net/hero-outline.svg?ic=user" width="24" height="24" color="#ffffff" />
+                            <v-icon name="fa-user" />
                             Login
                         </vs-button>
                     </div>
@@ -82,6 +86,9 @@ export default Vue.extend({
 .inner {
     color: white!important;
     //grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    & svg {
+        color: white;
+    }
 }
 .top{
     align-self: baseline;

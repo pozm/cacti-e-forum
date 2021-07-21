@@ -98,7 +98,7 @@ export default Vue.extend({
         margin-top: 1rem;
         background: $background-color-light;
         border-radius: 8px;
-        min-height: 100vh;
+        min-height: 73vh;
         z-index: 10;
         & > #content {
             margin: 3em 2em 2em;

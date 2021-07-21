@@ -12,7 +12,9 @@
             <div class="UserDat">
                 <div class="Avapp">
                     <div class="avatarParent">
-                        <avatar :url="reply.Author.Avatar" :size="128" />
+                        <nuxt-link :to="'/forum/user/'+reply.Author.UserId" >
+                            <avatar :url="reply.Author.Avatar" :size="128" />
+                        </nuxt-link>
                     </div>
                 </div>
                 <div class="belowAva">
@@ -23,12 +25,24 @@
                         {{ reply.Author.Rank.RankName }}
                     </h3>
                     <p class="usa2">
-                        Joined {{ timeMadeAuth }}
+                        <vs-tooltip>
+                            <svg data-src="https://s2.svgbox.net/materialui.svg?ic=date_range" width="20" height="20" color="#ffffff"></svg>
+                            <template #tooltip>
+                                Creation date of this user
+                            </template>
+                        </vs-tooltip>
+                        <span>Joined {{ timeMadeAuth }}</span>
                     </p>
                     <p class="usa2">
-                        Reputation <span style="margin: 0" :class="{rep:true,[reply.Author.Reputation > -1 ? 'good':'bad']:true}">
+                        <vs-tooltip>
+                            <template #tooltip>
+                                Reputation of this user, higher means better.
+                            </template>
+                            <svg data-src="https://s2.svgbox.net/hero-outline.svg?ic=emoji-happy" width="18" height="18" color="#fff"></svg>
+                        </vs-tooltip>
+                        <span>Reputation <span style="margin: 0" :class="{rep:true,[reply.Author.Reputation > -1 ? 'good':'bad']:true}">
                             {{ reply.Author.Reputation }}
-                        </span>
+                        </span></span>
                     </p>
                     <div class="badgeSector">
                         <div v-for="badge in getBadges" :key="badge+uuidv4">
@@ -43,15 +57,13 @@
                 </div>
             </div>
             <div class="ReplyDat">
-                <p>
-                    {{ reply.Content.slice(0,3500) }}
-                </p>
+                <div class="inline_HTML" v-html="Content" />
             </div>
         </div>
         <div class="ReplyFooter">
             <div class="FooterLeft">
-                <vs-button size="small">
-                    <svg data-src="https://s2.svgbox.net/hero-solid.svg?ic=thumb-up" width="18" height="18" color="#ffffff" />
+                <vs-button size="small" success style="color:#000000" >
+                    <svg data-src="https://s2.svgbox.net/hero-solid.svg?ic=thumb-up" width="18" height="18" color="#000000" />
                     {{ reply.Likes }}
                 </vs-button>
                 <vs-button size="small" danger>
@@ -61,6 +73,12 @@
             </div>
             <div class="FooterRight">
                 <p class="ReplyTime">
+                    <vs-tooltip>
+                        <template #tooltip>
+                            Date made
+                        </template>
+                        <svg data-src="https://s2.svgbox.net/materialui.svg?ic=date_range" width="20" height="20" color="#ffffff"></svg>
+                    </vs-tooltip>
                     {{ timeMade }}
                 </p>
             </div>
@@ -78,11 +96,11 @@
 
 import Vue, { PropType } from 'vue'
 import '~/assets/styling/user.scss'
+import sanitize from "sanitize-html";
 import { forumData } from '~/types/_/forum'
 import { Badge } from '~/assets/Badge'
-import { ThreadReplyOptionsctx, uuidv4 } from '~/assets/Functions'
+import { SanOpts, ThreadReplyOptionsctx, uuidv4 } from '~/assets/Functions'
 import { userData } from '~/types'
-
 export default Vue.extend({
     name: 'ThreadReply',
     data: () => ({ primaryColor: '255, 25, 25' }),
@@ -93,6 +111,9 @@ export default Vue.extend({
         }
     },
     computed: {
+        Content () {
+            return sanitize(this.reply.Content, SanOpts)
+        },
         timeMade () {
             return this.reply.TimeMade.toLocaleString(this.$nuxt.$isServer ? 'EN-GB' : window.navigator.language)
         },
@@ -117,6 +138,9 @@ export default Vue.extend({
             }
             case userData.Badges.oka: {
                 return 'https://s2.svgbox.net/hero-solid.svg?ic=sparkles'
+            }
+            case userData.Badges.liked: {
+                return 'https://s2.svgbox.net/hero-solid.svg?ic=thumb-up'
             }
             }
         },
@@ -145,6 +169,7 @@ export default Vue.extend({
         border-radius: 8px;
         padding: 1em 2em;
         box-shadow: 7px 7px 20px 0px rgba(  scale-color($background-color-lightest,$lightness:-40%),.4);
+        border: solid 2px scale-color($background-color-black,$lightness:1.3%);
         & > .ThreadUpper {
             display: flex;
             flex-flow: row-reverse;
@@ -166,17 +191,22 @@ export default Vue.extend({
                 margin-left: auto;
                 align-items: center;
                 & > p {
+                    display: flex;
+                    flex-flow: wrap;
                     margin-top: 0;
                 }
             }
         }
         & > .ThreadGrid {
-            display: grid;
+            display: flex;
+            flex-flow: row;
             & > .UserDat {
-                grid-row: 1;
-                grid-column: 1/3;
+                //grid-row: 1;
+                //grid-column: -50;
+                background: $background-color-lightest;
+                box-shadow: 7px 7px 20px 0px rgba(  scale-color($background-color-lightest,$lightness:-40%),.4);
 
-                border: solid 2px scale-color($background-color-black,$lightness:1.7%);
+                border: solid 2px scale-color($background-color-black,$lightness:1.3%);
                 border-radius: 8px;
                 padding:.6em;
                 height: max-content;
@@ -185,6 +215,10 @@ export default Vue.extend({
                     justify-content: center;
                 }
                 & .belowAva {
+                    & svg {
+                        display: flex;
+                        flex-flow: wrap;
+                    }
                     display: flex;
                     justify-content: center;
                     flex-flow: column;
@@ -195,8 +229,13 @@ export default Vue.extend({
                     & > .usa2 {
                         margin-top: 0;
                         margin-bottom: 0;
-                        //color:#67717F;
-                        display: ruby; // i have no clue what this is; but it works.
+                        display: flex;
+                        text-align: center;
+                        align-items: center;
+                        justify-content: center;
+                        & :not(:first-child) {
+                            margin-left: 4px;
+                        }
                     }
                     & > .badgeSector {
                         display: flex;
@@ -206,14 +245,39 @@ export default Vue.extend({
                 }
             }
             & > .ReplyDat {
-                grid-row: 1;
+                flex:auto;
                 display: flex;
                 justify-content: center;
                 padding-left: 1em;
+                & > .inline_HTML {
+                    width:100%;
+                }
             }
         }
         &:not(:last-child) {
             margin-bottom: 2em;
         }
     }
+</style>
+
+<style lang="scss" >
+.inline_HTML {
+    & img {
+        max-width: 100%;
+    }
+
+    // classes you can use in the inlined
+    & .center {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        display: block;
+    }
+    & .underline {
+        text-decoration: underline;
+    }
+    & .strike {
+        text-decoration: line-through;
+    }
+}
 </style>

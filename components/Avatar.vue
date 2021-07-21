@@ -1,14 +1,7 @@
 <template>
-    <div :class="{['drop-shadow']:shadow}">
-        <style>
-
-            :root {
-            --PrimCol : rgb({{ primaryColor }});
-            }
-
-        </style>
-        <div :hidden="!loaded" class="CircleMask p1" :style=" outer ? { background: outer} : '' ">
-            <div class="CircleMask p2" :style=" inner ? { background: inner} : '' ">
+    <div :class="{['drop-shadow']:shadow}" :style="{ ['box-shadow'] : shadow ? '3px 10px 20px -10px rgb('+primaryColor + ')' : '' }" >
+        <div :hidden="!loaded" class="CircleMask p1" :style="{ background: outer ? outer: 'rgb('+primaryColor + ')' }">
+            <div class="CircleMask p2" :style=" { background: inner ? inner: '' }">
                 <img
                     class="CircleMask"
                     :src="this.url"
@@ -57,25 +50,17 @@ export default Vue.extend({
 })
 
 </script>
-
-<style>
-
-.drop-shadow {
-    box-shadow: 3px 10px 20px -10px var(--PrimCol) !important;
-}
-.p1 {
-    background: var(--PrimCol) !important;
-}
-
-</style>
-
-<style lang="scss">
+<style lang="scss" scoped>
     @import "assets/styling/Var";
     .drop-shadow{
         border-radius: 50%;
         box-shadow: 3px 10px 20px -10px rgba($color-primary, 1);
         //margin-right: 10px;
 
+    }
+    img.CircleMask {
+        user-select: text;
+        -webkit-user-drag: none;
     }
     .p1 {
         padding:2px;

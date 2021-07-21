@@ -16,12 +16,23 @@ Vue.use(vuex)
 })
 export default class UserModule extends VuexModule {
     User: userData.User | { [x:string]:any } = {}
-    LoggedIn = false
+    LoggedIn = true
 
     @MutationAction
     async UpdateData () {
+        const f = (await $axios.get('/api/user/Current'))
+        console.log('data', f)
         // fetch user data and return it to update the class.
-        return {}
+        return f.data
+    }
+
+    @Action
+    async Get() {
+        console.log(!this.User?.Id)
+        if (!this.User?.Id)
+            await this.UpdateData();
+        else
+            return this.User
     }
 
     // @Action

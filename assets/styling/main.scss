@@ -2,16 +2,15 @@
 @import 'RankColours';
 
 // google fonts
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Nunito:wght@300;400&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Roboto:wght@100;300&display=swap');
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Nunito', 'Noto Sans', Roboto, Oxygen,
+    font-family: -apple-system, BlinkMacSystemFont, Roboto,'Nunito Sans', Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     //background-color: var(--bg);
     //color: var(--color);
     transition: background-color 0.3s;
     background-color: $color-black;
-    color:white;
+    color: $color-white;
 }
 
 
