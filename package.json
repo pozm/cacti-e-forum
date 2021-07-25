@@ -21,6 +21,7 @@
     }
   },
   "dependencies": {
+    "@discordjs/voice": "^0.5.4",
     "@nuxtjs/axios": "^5.13.1",
     "@nuxtjs/svg": "^0.1.12",
     "@prisma/client": "2.27.0",
