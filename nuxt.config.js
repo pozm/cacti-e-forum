@@ -36,7 +36,7 @@ export default {
         '@/plugins/axios-accessor.ts'
     ],
     server: {
-        port: IsDev ? 3000 : 80,
+        port: IsDev ? 3000 : 8081,
         host: '0.0.0.0',
     },
     // Auto import components: https://go.nuxtjs.dev/config-components

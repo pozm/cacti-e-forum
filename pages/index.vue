@@ -5,10 +5,10 @@
 
             <div >
                 <h1>
-                    Welcome to cacti
+                    Hey
                 </h1>
                 <h3>
-                    aka ∫∫'s website
+                    Welcome to cacti
                 </h3>
             </div>
         </div>
