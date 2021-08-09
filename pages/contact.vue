@@ -21,9 +21,9 @@
                     </a>
                 </div>
                 <h2>Or </h2>
-                <a href="mailto:pozmxz@gmail.com" style="display: flex; flex-flow: wrap; justify-content: center; align-items: center" >
+                <a href="mailto:pozm@astolfo.uk" style="display: flex; flex-flow: wrap; justify-content: center; align-items: center" >
                     <svg data-src="https://s2.svgbox.net/hero-solid.svg?ic=mail" width="32" height="32" color="#fff"></svg>
-                    <h4>You can shoot me an email @ pozmxz@gmail.com</h4>
+                    <h4>You can shoot me an email @ pozm@astolfo.uk</h4>
                 </a>
             </div>
         </div>
