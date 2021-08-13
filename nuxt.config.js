@@ -1,4 +1,4 @@
-const IsDev = process.env.NODE_ENV !== 'production'
+// const IsDev = process.env.NODE_ENV !== 'production'
 
 export default {
     // Global page headers: https://go.nuxtjs.dev/config-head
@@ -36,8 +36,8 @@ export default {
         '@/plugins/axios-accessor.ts'
     ],
     server: {
-        port: IsDev ? 3000 : 8081,
-        host: '0.0.0.0',
+        port: 8081,
+        host: '127.0.0.1',
     },
     // Auto import components: https://go.nuxtjs.dev/config-components
     components: true,
